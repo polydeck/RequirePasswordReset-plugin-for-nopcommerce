@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: Require Password Change
+SystemName: Misc.RequirePasswordChange
+Version: 1.0
+SupportedVersions: 3.70
+Author: Polydeck Development Team
+DisplayOrder: 1
+FileName: Polydeck.Nop.Plugin.Misc.RequirePasswordChange.dll
