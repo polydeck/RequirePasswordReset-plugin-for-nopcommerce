@@ -15,21 +15,18 @@ using Polydeck.Nop.Plugin.Misc.RequirePasswordChange.Domain;
 
 namespace Polydeck.Nop.Plugin.Misc.RequirePasswordChange.ActionFilters
 {
+    /// <summary>
+    /// Redirect customer to password change page if the custom customer 
+    /// attribute "RequirePasswordChange" is set to true.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.ActionFilterAttribute" />
+    /// <seealso cref="System.Web.Mvc.IFilterProvider" />
     public class CustomerLoginActionFilter : ActionFilterAttribute, IFilterProvider
     {
         #region Fields
 
-        // see Nop.Web.Controllers.ShoppingCartController.cs
         private const string CustomerControllerName = "Customer";
         private const string LoginActionName = "Login";
-
-        // Initializing services per ActionFilter causes them to throw DbContext
-        // not initialized exceptions. Instead, initialize them in the methods 
-        // where they are to be used. E.g.
-        // var invoiceItemService = EngineContext.Current.ContainerManager.Resolve<IInvoiceItemService>();
-        // Don't do this at the class Level:
-        // private readonly IOrderService _orderService = EngineContext.Current.Resolve<IOrderService>();
-        // private readonly IInvoiceItemService _invoiceItemService = EngineContext.Current.Resolve<IInvoiceItemService>();
 
         #endregion
 
@@ -48,8 +45,6 @@ namespace Polydeck.Nop.Plugin.Misc.RequirePasswordChange.ActionFilters
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             base.OnActionExecuted(filterContext);
-
-            //if (IsCustomerLoginAction(filterContext.ActionDescriptor, filterContext.HttpContext))
             OnCustomerLoginActionExecuted(filterContext);
         }
 
