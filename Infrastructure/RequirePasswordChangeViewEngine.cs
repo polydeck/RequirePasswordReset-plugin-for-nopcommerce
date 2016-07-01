@@ -10,8 +10,8 @@ namespace Polydeck.Nop.Plugin.Misc.RequirePasswordChange.Infrastructure
     {
         public RequirePasswordChangeViewEngine()
         {
-            ViewLocationFormats = new[] { "~/Plugins/Misc.RequirePasswordChange/Views/{0}.cshtml" };
-            PartialViewLocationFormats = new[] { "~/Plugins/Misc.RequirePasswordChange/Views/{0}.cshtml" };
+            ViewLocationFormats = new[] { "~/Plugins/Polydeck.Misc.RequirePasswordChange/Views/{0}.cshtml" };
+            PartialViewLocationFormats = new[] { "~/Plugins/Polydeck.Misc.RequirePasswordChange/Views/{0}.cshtml" };
         }
     }
 }
