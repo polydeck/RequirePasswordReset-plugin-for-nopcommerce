@@ -19,6 +19,10 @@ namespace Polydeck.Nop.Plugin.Misc.RequirePasswordChange.Infrastructure
         {
             #region register action filters
 
+            builder.RegisterType<CustomerInfoActionFilter>()
+                .As<IFilterProvider>()
+                .InstancePerRequest();
+
             builder.RegisterType<CustomerLoginActionFilter>()
                 .As<IFilterProvider>()
                 .InstancePerRequest();
